@@ -2,8 +2,6 @@
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  // uncomment next line if you use Prisma <5.10
-  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 generator client {
@@ -14,7 +12,7 @@ model Course {
   id          String  @id @default(uuid())
   userId      String
   title       String  @db.Text
-  description String  @db.Text
+  description String? @db.Text
   imageUrl    String? @db.Text
   price       Float?
   isPublished Boolean @default(false)
@@ -49,13 +47,4 @@ model Attachment {
   updatedAt DateTime @updatedAt
 
   @@index([courseId])
-}
-
-model Test {
-  id        String   @id @default(uuid())
-  name      String
-  courseId  String
-  price     Int
-  createAt  DateTime
-  updatedAt DateTime
 }

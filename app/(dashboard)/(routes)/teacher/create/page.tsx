@@ -34,11 +34,12 @@ const CreatePage = () => {
 
   const onSubmit = async (values: z.infer<typeof schema>) => {
     try{
-        const response = await axios.post("/teacher/course" , values);
+        const response = await axios.post("/api/courses" , values);
         // console.log(response);
         router.push(`/teacher/courses/${response.data.id}`)
+        toast.success("Course created")
     }catch{
-        toast.error("something went wrong");
+        toast.error("Something went wrong");
     }
   };
 
@@ -89,7 +90,6 @@ const CreatePage = () => {
             >
              Continue
             </Button>
-
             </div>
           </form>
         </Form>
