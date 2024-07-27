@@ -4,7 +4,7 @@
 
     export async function POST(req : Request){
         try{
-            
+
         const { userId } = auth();
         const { title } = await req.json();
         if(!userId){

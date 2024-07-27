@@ -34,7 +34,7 @@ const CreatePage = () => {
 
   const onSubmit = async (values: z.infer<typeof schema>) => {
     try{
-        const response = await axios.post("/api/courses" , values);
+        const response = await axios.post("/api/courses",values);
         // console.log(response);
         router.push(`/teacher/courses/${response.data.id}`)
         toast.success("Course created")
@@ -79,7 +79,7 @@ const CreatePage = () => {
             <div className="flex items-center gap-x-2 justify-between">
             <Link href={`/`}>
             <Button type="button"
-            className="hover:bg-slate-200">
+            className="bg-slate-200 hover:bg-slate-300">
               Cancel
             </Button>
             </Link>
