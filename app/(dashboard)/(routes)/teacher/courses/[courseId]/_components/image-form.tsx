@@ -88,8 +88,8 @@ export function ImageForm({ initialData, courseId }: ImageFormProps) {
           }
         }}
         />
-        <div>
-          16:9 Aspect Ratio Recommended
+        <div className="mt-3">
+          16:9 aspect ratio recommended
         </div>
        </div>
       )}

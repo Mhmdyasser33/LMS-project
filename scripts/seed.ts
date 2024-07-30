@@ -1,28 +1,32 @@
 /* 
-    this seed file is used to seed the database with initial value as a default values 
-    until the user add new category or update to them  
+  this file is responsible for initialize the database
+  with some category as a initial value for database
+  and then update them in later
  */
 
-import { PrismaClient } from "@prisma/client";
+const {PrismaClient} = require("@prisma/client") ; 
 
-const database = new PrismaClient() ; 
+const database = new PrismaClient();
 
 async function main(){
-   try{
-    await database.category.createMany({
-        data : [
-            {name : "Computer science" , description : ""},
-            {name : "Information technology" , description : ""},
-            {name : "Computer science" , description : ""},
-            {name : "AI" , description : ""},
-            {name : "Filming" , description : ""},
-            {name : "Accounting" , description : ""}
-        ]
-    })
+    try{
+        await database.category.createMany({
+           data : [
+            {name : "Computer science"},
+            {name : "Information technology" },
+            {name : "Computer engineering"},
+            {name : "AI" },
+            {name : "Filming"},
+            {name : "Accounting"}
+           ]
+        });
+        console.log("Seeding successfully done");
 
-   }catch(error){
-     console.log("Error in seeding database category" , error);
-   }finally{
-       await database.$disconnect() ; 
-   }
+    }catch(error){
+        console.log("Error in seeding the database category" , error);
+    }finally{
+        await database.$disconnect() ; 
+    }
 }
+
+main()
