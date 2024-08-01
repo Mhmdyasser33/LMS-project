@@ -9,12 +9,11 @@ import { ImageIcon, Pencil, PlusCircle } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { Course } from "@prisma/client";
 
 
 interface ImageFormProps {
-  initialData: {
-    imageUrl: string;
-  };
+  initialData: Course
   courseId: string;
 }
 
