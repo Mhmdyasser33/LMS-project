@@ -10,14 +10,16 @@ const database = new PrismaClient();
 
 async function main(){
     try{
+       /*  await database.category.deleteMany(); */
         await database.category.createMany({
            data : [
             {name : "Computer science"},
-            {name : "Information technology" },
-            {name : "Computer engineering"},
-            {name : "AI" },
+            {name : "Accounting" },
+            {name : "Engineering"},
+            {name : "Fitness" },
             {name : "Filming"},
-            {name : "Accounting"}
+            {name : "Photography"},
+            {name : "AI"}
            ]
         });
         console.log("Seeding successfully done");
