@@ -98,9 +98,9 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
       </div>
       <div className="space-y-6">
         <div>
-          <div className="flex items-center gap-x-2">
+          <div className="flex items-center gap-x-2 p-3">
            <IconBadge icon={ListChecks}/>
-           <h2>
+           <h2 className="mt-2">
             Course chapters
            </h2>
           </div>
