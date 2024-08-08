@@ -1,12 +1,15 @@
 import { IconBadge } from "@/components/icon-badge";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
-import { ArrowLeft, Eye, LayoutDashboard } from "lucide-react";
+import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { ChapterTitleForm } from "./_components/chapter-title-form";
 import { ChapterDescriptionForm } from "./_components/chapter-description-form";
 import { ChapterAccessSettings } from "./_components/chapter-access-settings";
+import { ChapterVideoForm } from "./_components/chapter-video-form";
+import { Banner } from "@/components/banner";
+import { ChapterActions } from "./_components/chapter-cations";
 
 const ChapterIdPage = async({params} : {params : {courseId : string , chapterId : string}}) => {
       const { userId } = auth() ; 
@@ -38,7 +41,16 @@ const ChapterIdPage = async({params} : {params : {courseId : string , chapterId 
     //   console.log(completedFields);
       const completionText = (`(${completedFields}/${totalField})`) ; 
     //   console.log(completionText);
+
+    const isComplete = requiredFields.every(Boolean) ; 
     return ( 
+      <>
+      {!chapter.isPublished && (
+        <Banner
+        variant={`warning`}
+        label="This chapter is unpublished. It will not be visible in the course"
+        />
+      )}
         <div className="p-6">
             <div className="flex items-center justify-between">
              <div className="w-full">
@@ -56,6 +68,11 @@ const ChapterIdPage = async({params} : {params : {courseId : string , chapterId 
                     Complete all fields {completionText}
                   </span>
                   </div>
+                  <ChapterActions
+                  disabled={!isComplete}
+                  chapterId={params.chapterId}
+                  courseId={params.courseId}
+                  isPublished={chapter.isPublished}/>
                  </div> 
              </div>
             </div>
@@ -88,8 +105,20 @@ const ChapterIdPage = async({params} : {params : {courseId : string , chapterId 
               courseId={params.courseId}/>
             </div>
             </div>
+            <div>
+              <div className="flex items-center gap-x-2">
+                <IconBadge icon={Video}/>
+                <h2 className="text-xl">Add a video </h2>
+              </div>
+              <ChapterVideoForm
+              initialData={chapter}
+              chapterId={params.chapterId}
+              courseId={params.courseId}
+              />
+            </div>
             </div>
         </div>
+        </>
      );
 }
  

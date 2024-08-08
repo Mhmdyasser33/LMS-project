@@ -78,7 +78,7 @@ export const ChaptersList = ({items,onReorder,onEdit} : ChaptersListProps)=>{
                                 {chapter.title}
                                 <div className="ml-auto pr-2 flex items-center gap-x-2">
                                 {chapter.isFree && (
-                                      <Badge>
+                                      <Badge className="bg-black text-white">
                                         Free
                                       </Badge>
                                 )}
