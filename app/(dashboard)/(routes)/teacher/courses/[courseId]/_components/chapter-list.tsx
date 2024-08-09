@@ -82,7 +82,7 @@ export const ChaptersList = ({items,onReorder,onEdit} : ChaptersListProps)=>{
                                         Free
                                       </Badge>
                                 )}
-                                <Badge className={cn("bg-slate-500",chapter.isPublished && "bg-sky-700")}>
+                                <Badge className={cn("bg-slate-500",chapter.isPublished && "bg-sky-700 text-white")}>
                                     {chapter.isPublished ? "Published" : "Draft"}
                                 </Badge>
                                 <Pencil 

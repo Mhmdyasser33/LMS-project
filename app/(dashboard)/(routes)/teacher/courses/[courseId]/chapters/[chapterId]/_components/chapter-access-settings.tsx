@@ -37,7 +37,7 @@ export function ChapterAccessSettings({ initialData, courseId  , chapterId}: Cha
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {
-      isFree : Boolean(initialData.isFree) /* || !!initialData.isFree */
+      isFree : !!initialData.isFree  /* => equivalent to =>  Boolean(initialData.isFree) */  
     },
   });
 
@@ -69,14 +69,14 @@ export function ChapterAccessSettings({ initialData, courseId  , chapterId}: Cha
         </Button>
       </div>
       {!isEditing && (
-        <p className={cn("text-sm mt-2", !initialData.description && "text-slate-500 italic")}>
+        <p className={cn("text-sm mt-2", !initialData.isFree && "text-slate-500 italic")}>
           {initialData.isFree ? (
-            <p className="text-sm italic">
+            <>
               This chapter is free for preview..
-            </p>
-          ) : <p className="text-sm text-slate-500 italic">
+            </>
+          ) : <>
               This chapter is not free 
-          </p>}
+          </>}
         </p>
       )}
       {isEditing && (

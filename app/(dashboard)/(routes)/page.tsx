@@ -5,7 +5,7 @@
     return (
       <div>
        {/*  <UserButton afterSignOutUrl="/"/> */}
-       <p> the main page </p>
+       <p> i&apos; m the Dashboard  </p>
       </div>
     )
   }

@@ -26,8 +26,7 @@ export function ChapterVideoForm({
   courseId,
   chapterId,
 }: ChapterVideoFormProps) {
-
-
+  const [mounted , setMounted] = useState(false) ; 
   const [isEditing, setIsEditing] = useState(false);
   const toggleEdit = () => setIsEditing((current) => !current);
   const router = useRouter();
@@ -42,6 +41,14 @@ export function ChapterVideoForm({
       toast.error("Something went wrong");
     }
   };
+   
+  useEffect(()=>{
+    setMounted(true);
+  },[])
+  if(!mounted){
+    return null; 
+  }
+
 
   return (
     <div className="mt-6 border bg-slate-100 rounded p-4">
