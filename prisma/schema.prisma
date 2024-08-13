@@ -2,6 +2,7 @@
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 generator client {
@@ -23,7 +24,6 @@ model Course {
   attachments Attachment[]
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @updatedAt
-
   @@index([categoryId])
 }
 

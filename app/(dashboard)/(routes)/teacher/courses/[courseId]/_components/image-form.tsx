@@ -67,12 +67,12 @@ export function ImageForm({ initialData, courseId }: ImageFormProps) {
           <ImageIcon className="h-10 w-10 text-slate-500"/>
         </div>
       ) : (
-        <div className="relative aspect-video mt-2">
+        <div className="relative w-full aspect-video rounded-md overflow-hidden">
           <Image
           alt="Upload"
           src={initialData.imageUrl}
           fill
-          className="object-cover rounded-md"
+          className="object-cover"
           />
         </div>
       )
