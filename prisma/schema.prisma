@@ -94,7 +94,8 @@ model Purchase{
 
   createdAT DateTime @default(now())
   updatedAt DateTime @updatedAt
-
+  // here ensure that user only will purchse only once not omre one for the course this prevent purchasing multiple time for the course...
+  @@unique([userId , courseId])
   @@index([courseId])
 }
 
