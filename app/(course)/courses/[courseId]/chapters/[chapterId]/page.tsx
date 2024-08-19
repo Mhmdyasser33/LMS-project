@@ -39,7 +39,7 @@ import { CourseProgressButton } from "./course-progress-button";
     const isLocked = !chapter.isFree && !isUserPurchased ;
     const completeChapterFromBeginToEnd = !!isUserPurchased && !userProgress?.isCompleted 
     return(
-        <div className="text-white">
+        <div className="text-black">
           {userProgress?.isCompleted && (
             <Banner
               variant={`success`}
