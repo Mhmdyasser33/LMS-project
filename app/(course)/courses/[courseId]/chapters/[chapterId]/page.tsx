@@ -15,7 +15,7 @@ import { CourseProgressButton } from "./course-progress-button";
 
     const { userId } = auth() ;
     if( !userId){
-        return redirect("/")
+        return redirect("/sign-in")
     } 
     
     //fetch chapter data from database

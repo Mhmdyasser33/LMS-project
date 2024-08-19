@@ -14,7 +14,7 @@ import { ChapterActions } from "./_components/chapter-actions";
 const ChapterIdPage = async({params} : {params : {courseId : string , chapterId : string}}) => {
   const { userId } = auth() ; 
       if(!userId){
-        return redirect("/");
+        return redirect("/sign-in");
       }
       //! ensure that chapter want to edit is founded in database 
       const chapter = await db.chapter.findUnique({

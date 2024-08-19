@@ -17,7 +17,7 @@ interface SearchPageProps {
 const SearchPage = async({searchParams} : SearchPageProps) => {
     const {userId} = auth();
     if(!userId){
-        return redirect("/")
+        return redirect("/sign-in")
     }
      // ! get categories from database 
     const categories = await db.category.findMany({

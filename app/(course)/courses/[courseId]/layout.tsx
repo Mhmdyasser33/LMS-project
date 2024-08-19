@@ -9,7 +9,7 @@ import CourseNavbar from "./_components/course-navbar";
 const CourseLayoutPage = async ({children , params} : {children : React.ReactNode,params : {courseId : string}}) => {
   const { userId } = auth() ; 
   if(!userId){
-    return redirect("/")
+    return redirect("/sign-in")
   }
 const course = await db.course.findUnique({
     where : {
