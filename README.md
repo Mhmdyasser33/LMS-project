@@ -1,8 +1,4 @@
 
-![Galaxy-Tab-S7-lms-project-three-iota vercel app](https://github.com/user-attachments/assets/d3c947b8-ab07-4695-a439-6944197cd565)
-
-
-
 # Course & LMS Platform
 This project is a comprehensive Learning Management System (LMS) and course platform built with modern web technologies. It replicates key features of popular online learning platforms like Udemy, enabling users to create, sell, and take online courses.
 
