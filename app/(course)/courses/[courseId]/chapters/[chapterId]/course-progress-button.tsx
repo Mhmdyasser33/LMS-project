@@ -48,12 +48,14 @@ export const CourseProgressButton = ({chapterId,courseId,nextChapterId,isComplet
 
     return(
         <Button
-        onClick={onClick}
+         disabled={isLoading}
+         onClick={onClick}
          type="button"
          variant={isCompleted ? "outline" : "success"}
-          className="w-full md:w-auto bg-black text-white">
+         className="w-full md:w-auto bg-black text-white">
            {isCompleted ? "Not completed" : "Mark as complete"}
-           <Icon className="w-4 h-4 ml-2"/>
+           <Icon className="w-4 h-4 ml-2"
+           />
         </Button>
    )
 }

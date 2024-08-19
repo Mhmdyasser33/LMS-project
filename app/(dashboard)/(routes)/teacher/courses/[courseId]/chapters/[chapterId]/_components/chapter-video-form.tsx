@@ -78,9 +78,12 @@ export function ChapterVideoForm({
             <Video className="h-10 w-10 text-slate-500" />
           </div>
         ) : (
-          <div className="relative aspect-video mt-2">
-            <MuxPlayer playbackId={initialData?.muxData?.playbackId || ""} />
-          </div>
+              <div className="relative w-full h-0 pt-[56.25%] mt-2">
+          <MuxPlayer
+              playbackId={initialData?.muxData?.playbackId || ""}
+              className="absolute top-0 left-0 w-full h-full"
+             />
+            </div>
         )
       )}
       {isEditing && (
