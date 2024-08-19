@@ -24,7 +24,6 @@ export const CourseProgressButton = ({chapterId,courseId,nextChapterId,isComplet
     const onClick = async()=>{
         try{
             setIsLoading(true) ;
-
             await axios.put(`/api/courses/${courseId}/chapters/${chapterId}/progress`,{
                 // ! ex: video not complete and we make complete so value and negative of it...
                 isCompleted : !isCompleted

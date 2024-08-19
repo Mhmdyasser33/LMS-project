@@ -50,29 +50,29 @@ export const VideoPlayer = ({chapterId,title,courseId,nextChapterId,playBackId,i
        }
     }
     return(
-        <div className="relative aspect-video">
-            {!isReady && !isLocked && (
-                <div className=" absolute bg-slate-800 flex items-center inset-0 justify-center">
-                    <Loader2 className="w-8 h-8  animate-spin text-secondary"/>
-                </div>
-            )}
-            {isLocked && (
-                <div className="absolute bg-slate-800 flex flex-col gap-y-2 items-center inset-0 justify-center">
-                   <Lock className="h-8 w-8"/>
-                   <p className="text-lg text-white">This chapter is locked </p>
-                </div>
-            )}
-
-            {!isLocked && (
-                <MuxPlayer
-                className={cn(!isReady && "hidden")}
-                title={title}
-                onCanPlay={()=> setIsReady(true)}
-                onEnded={onEnd}
-                autoPlay
-                playbackId={playBackId}
-                />
-            )}
+   <div className="relative pb-[56.25%]">
+    {!isReady && !isLocked && (
+        <div className="absolute inset-0 bg-slate-800 flex items-center justify-center">
+            <Loader2 className="w-8 h-8 animate-spin text-secondary" />
         </div>
+    )}
+    {isLocked && (
+        <div className="absolute inset-0 bg-slate-800 flex flex-col items-center justify-center gap-y-2">
+            <Lock className="h-8 w-8" />
+            <p className="text-lg text-white">This chapter is locked</p>
+        </div>
+    )}
+    {!isLocked && (
+        <MuxPlayer
+            className={cn(!isReady && "hidden", "absolute inset-0 w-full h-full mt-3")}
+            title={title}
+            onCanPlay={() => setIsReady(true)}
+            onEnded={onEnd}
+            autoPlay
+            playbackId={playBackId}
+        />
+    )}
+</div>
+
     )
 }
