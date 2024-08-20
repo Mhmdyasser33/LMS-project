@@ -15,8 +15,8 @@ const fontSans = FontSans({
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'LMS project',
-  description: 'this is my project is specified for learning',
+  title:  'Learnify',
+  description: 'Learnify is a modern Learning Management System that streamlines education with interactive courses, personalized learning paths, and easy progress tracking, making learning accessible and engaging for all users.',
 }
 
 export default function RootLayout({

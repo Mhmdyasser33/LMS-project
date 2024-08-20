@@ -3,6 +3,12 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { DataCard } from "./_components/data-card";
 import { Chart } from "./_components/chart";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Analytics page",
+    description: "Gain insights into your learning progress and course performance with detailed analytics. Track revenue, sales, and student engagement in real-time."
+}
 
 const AnalyticsPage =async () => {
 

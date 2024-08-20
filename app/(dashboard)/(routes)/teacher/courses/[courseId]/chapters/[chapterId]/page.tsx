@@ -36,11 +36,8 @@ const ChapterIdPage = async({params} : {params : {courseId : string , chapterId 
         chapter.videoUrl,
       ];
       const totalField = requiredFields.length ; 
-    //   console.log(totalField);
       const completedFields = requiredFields.filter(Boolean).length ; 
-    //   console.log(completedFields);
       const completionText = (`(${completedFields}/${totalField})`) ; 
-    //   console.log(completionText);
 
     const isComplete = requiredFields.every(Boolean) ; 
     return ( 

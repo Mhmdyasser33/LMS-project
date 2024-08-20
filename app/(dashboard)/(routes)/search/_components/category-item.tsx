@@ -17,9 +17,6 @@ export const CategoryItem = ({label,icon : Icon,value} : CategoryItemProps)=>{
     const pathname = usePathname();
     const router = useRouter();
     const searchParams = useSearchParams();
-    // console.log("my pathname is " , pathname);
-    // console.log("my router is " , router);
-    // console.log("my searchParams is " , searchParams);
     const currentCategoryId = searchParams.get("categoryId") ; 
     const currentTitle = searchParams.get("title");
     const isSelected = currentCategoryId === value 

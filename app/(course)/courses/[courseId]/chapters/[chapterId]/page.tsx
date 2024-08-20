@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import { Preview } from "@/components/preview";
 import { File } from "lucide-react";
 import { CourseProgressButton } from "./course-progress-button";
+import { Metadata } from "next";
 
  const ChapterIdPage =  async({params} : 
     {params : {courseId : string , chapterId : string}}

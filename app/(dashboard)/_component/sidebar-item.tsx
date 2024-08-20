@@ -13,7 +13,6 @@ export const SidebarItem = ({icon : Icon,label,href} : SideBarItemProps)=>{
     // get the current pathname of the page 
     const pathname = usePathname();
     const router = useRouter();
-    // console.log(router);
 
     // decide the sidebar item is active or not based on specific condition 
     const isActive = (pathname === "/" && href === "/") || 

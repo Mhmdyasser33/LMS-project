@@ -5,6 +5,12 @@ import { getCourses } from "@/actions/get-course";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { CoursesList } from "@/components/course-list";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Search page",
+    description: "Explore a wide range of courses on our LMS platform. Find and enroll in the best courses that match your learning goals."
+}
 
 
 interface SearchPageProps {
@@ -15,7 +21,7 @@ interface SearchPageProps {
 }
 
 const SearchPage = async({searchParams} : SearchPageProps) => {
-    const {userId} = auth();
+    const { userId } = auth();
     if(!userId){
         return redirect("/sign-in")
     }

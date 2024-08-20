@@ -3,8 +3,12 @@ import { columns } from "./_components/columns";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
+import { Metadata } from "next";
 
-
+export const metadata: Metadata = {
+    title: "Courses page",
+    description: "Browse through our extensive collection of courses. Enhance your skills with top-quality learning content designed for all levels."
+}
 
 const CoursesPage =async () => {
      

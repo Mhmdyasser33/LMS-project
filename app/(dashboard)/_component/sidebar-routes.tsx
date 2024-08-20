@@ -34,7 +34,6 @@ const teacherRoutes = [
 export const SidebarRoutes = ()=>{
 
     const pathname = usePathname();
-   /*  console.log(pathname); */
     const isTeacherPage = pathname?.includes("/teacher") ; 
 
     const routes = isTeacherPage ? teacherRoutes : clientRoutes ; 

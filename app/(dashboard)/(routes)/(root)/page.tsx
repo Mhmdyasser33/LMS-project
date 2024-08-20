@@ -4,10 +4,14 @@ import { auth } from "@clerk/nextjs/server"
 import { CheckCircle, Clock } from "lucide-react";
 import { redirect } from "next/navigation";
 import { InfoCard } from "./_components/info-card";
+import { Metadata } from "next";
+
+
 
 
 
 export default async function Dashboard() {
+
     const { userId } = auth();
     if(!userId){
       return redirect("/sign-in")
