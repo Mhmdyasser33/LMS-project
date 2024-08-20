@@ -1,5 +1,7 @@
+import { Metadata } from "next";
 import { Navbar } from "./_component/navbar";
 import Sidebar from "./_component/sidebar";
+
 
 const DashboardLayout = ({children} :{
     children : React.ReactNode
